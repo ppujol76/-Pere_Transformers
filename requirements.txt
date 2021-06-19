@@ -1,0 +1,8 @@
+torch
+torchvision
+matplotlib
+tensorboard
+Pillow
+pandas
+nltk
+pytest

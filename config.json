@@ -1,5 +1,5 @@
 {	
-	"DATASET_FOLDER": "../../upc_dl_project_2021/data",
+	"DATASET_FOLDER": "data",
 	"HPARAMS":{
 		"BATCH_SIZE": 64,
 		"VOCAB_SIZE": 5000,

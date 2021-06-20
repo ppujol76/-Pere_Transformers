@@ -124,6 +124,6 @@ def train(num_epochs, model, train_loader,test_loader, optimizer, criterion, dev
 	for epoch in range(1,num_epochs+1):
 		train_single_epoch(epoch, model, train_loader,optimizer, criterion, device, scheduler)
 		scheduler.step()
-		if epoch % 1 == 0:
+		if epoch % 5 == 0:
 			save_model(model, epoch)
 	

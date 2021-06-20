@@ -102,7 +102,7 @@ class ImageCaptioningModel(nn.Module):
 		pos_embeddings = pos_embeddings.permute(1,0,2)
 
 		## La dimensió de pos-embeddings hauria de ser  Seq_len,batch,embed_size
-		x = self.decoder(pos_embeddings,images_features)
+		x = self.decoder(pos_embeddings,images_features,tgt_mask=self.tgt_mask)
 		x = self.linear(x)
 
 		return x
@@ -120,7 +120,7 @@ class ImageCaptioningModel(nn.Module):
 #			predictions_t, hidden = self.decoder.forward(weighted_features, words, hidden)
 #			predictions[i] = predictions_t
 #			attention_weights.append(alphas)
-		return predictions.permute(1,2,0), attention_weights
+#		return predictions.permute(1,2,0), attention_weights
 	
 	def inference(self, image):
 		image_features = self.encoder(image)

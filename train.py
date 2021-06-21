@@ -78,7 +78,14 @@ def train_single_epoch(epoch, model, train_loader, optimizer, criterion, device,
 		reference_corpus = [model.vocab.generate_caption(target[0, 1:])]
 		bleu = 0
 		# bleu = bleu_score(candidate_corpus, reference_corpus)
-
+		print('--------------------------------------------------------------------------------------------------')
+		print('--------------------------------------------------------------------------------------------------')
+		print(f'Epoch {epoch} batch: {i} loss: {loss.item()}')
+		print('--------------------------------------------------------------------------------------------------')
+		print(candidate_corpus[0])
+		print(reference_corpus[0])
+		print('--------------------------------------------------------------------------------------------------')
+		
 #		Ho comento per què em dona un error de cuda
 #		write_on_tensorboard(i+(epoch*len(train_loader)),loss.item(),bleu,img[0],reference_corpus,candidate_corpus)
 
